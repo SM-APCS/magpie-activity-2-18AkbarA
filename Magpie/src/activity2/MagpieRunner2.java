@@ -5,7 +5,7 @@
  */
 package activity2;
 import java.util.Scanner;
-
+import java.lang.String.*;
 /**
  * A simple class to run the Magpie class.
  * @author Mr. T
@@ -28,7 +28,7 @@ public class MagpieRunner2
 		while (!statement.equals("Bye"))
 		{
 			System.out.println (maggie.getResponse(statement));
-			statement = in.nextLine();
+			statement = in.nextLine().toLowerCase().trim();
 		}
 	}
 

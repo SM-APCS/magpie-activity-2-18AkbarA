@@ -16,6 +16,7 @@ package activity2;
  * @author Mr. T
  * @version December 2016
  */
+
 public class Magpie2
 {
 	/**
@@ -37,9 +38,24 @@ public class Magpie2
 	public String getResponse(String statement)
 	{
 		String response = "";
-		if (statement.indexOf("no") >= 0)
+		if(statement.equals("")){
+			response = "Enter something, you fool!";
+		}
+		else if (statement.indexOf("no") >= 0)
 		{
 			response = "Why so negative?";
+		}
+		else if (statement.indexOf("mantis") >= 0)
+		{
+			response = "Ah. I have heard of this ‘praying mantis’.";
+		}
+		else if (statement.indexOf("car") >= 0)
+		{
+			response = "Do you like Ferraris?";
+		}
+		else if (statement.indexOf("test") >= 0)
+		{
+			response = "Hope you do well.";
 		}
 		else if (statement.indexOf("mother") >= 0
 				|| statement.indexOf("father") >= 0
@@ -48,6 +64,15 @@ public class Magpie2
 		{
 			response = "Tell me more about your family.";
 		}
+		
+		else if (statement.indexOf("dog") > -1 || statement.indexOf("cat") > -1){
+			response = "Tell me more about your pets.";
+		}
+		
+		else if (statement.indexOf("mr. tholking") > -1 || statement.indexOf("mr tholking") > -1){
+			response = "That dude sounds cool, bro.";
+		}
+		
 		else
 		{
 			response = getRandomResponse();
@@ -61,7 +86,7 @@ public class Magpie2
 	 */
 	private String getRandomResponse()
 	{
-		final int NUMBER_OF_RESPONSES = 4;
+		final int NUMBER_OF_RESPONSES = 6;
 		double r = Math.random();
 		int whichResponse = (int)(r * NUMBER_OF_RESPONSES);
 		String response = "";
@@ -82,7 +107,15 @@ public class Magpie2
 		{
 			response = "You don't say.";
 		}
-
+		else if (whichResponse == 4)
+		{
+			response = "Huh. I see.";
+		}
+		else if (whichResponse == 5)
+		{
+			response = "Cool story bro. Don't tell it again.";
+		}
+		
 		return response;
 	}
 }
